@@ -13,11 +13,12 @@ const authRoutes = require('./routes/authRoutes');
 const messageRoutes = require('./routes/messageRoutes')
 const userRoutes = require('./routes/userRoutes');
 
-const app = express();
+const app = express(); 
+const FRONT_END_APP = process.env.FRONT_END;
 
 // Middleware
 app.use(express.json());
-app.use(cors({ origin: 'http://localhost:5173', methods: 'GET,POST,PUT,DELETE', allowedHeaders: 'Content-Type,Authorization' }));
+app.use(cors({ origin: FRONT_END_APP, methods: 'GET,POST,PUT,DELETE', allowedHeaders: 'Content-Type,Authorization' }));
 
 // Connect to MongoDB
 connectDB();
