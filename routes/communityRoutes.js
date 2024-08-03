@@ -29,6 +29,7 @@ const calculateMetrics = async (communityId) => {
     period: date,
     rate: growthRate[date],
   }));
+  
 
   // Calculate engagement rate (messages per day in the last 7 days)
   const oneWeekAgo = new Date();
