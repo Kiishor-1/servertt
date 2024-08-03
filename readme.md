@@ -1,8 +1,8 @@
-# Telegram Trends - Backend
+# ChatMetrics - Backend
 
 ## Overview
 
-This backend is part of the Telegram Trends dashboard application. It is built using Node.js and Express, and connects to a MongoDB database to store and retrieve community metrics data.
+This backend is part of the ChatMetrics dashboard application. It is built using Node.js and Express, and connects to a MongoDB database to store and retrieve community metrics data.
 
 ## Features
 
