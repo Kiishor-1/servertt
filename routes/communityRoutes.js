@@ -132,10 +132,17 @@ router.get('/:communityId/members', async (req, res) => {
 });
 
 
+const communityAdmin = process.env.COMMUNITY_ADMIN;
+
+
 // Route to create a new community
 router.post('/', async (req, res) => {
   try {
-    const { name } = req.body;
+    const { name ,admin} = req.body;
+    console.log(admin);
+    if(!admin || admin !== communityAdmin){
+      return res.status(404).json({message:'You are not authorized to create a community'});
+    }
 
     // Check if the community already exists
     const existingCommunity = await Community.findOne({ name });
