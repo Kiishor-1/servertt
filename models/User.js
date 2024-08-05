@@ -34,6 +34,10 @@ const userSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  communities: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Community',
+  }],
 });
 
 module.exports = mongoose.model('User', userSchema);

@@ -6,6 +6,8 @@ const express = require('express');
 const cors = require('cors');
 const connectDB = require('./config/dbConfig');
 const { port } = require('./config/appConfig');
+const cron = require('node-cron');
+const scheduleTasks = require('./schedule')
 
 // Import routes
 const communityRoutes = require('./routes/communityRoutes');
