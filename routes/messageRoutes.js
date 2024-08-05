@@ -21,6 +21,8 @@ router.post('/:communityId', async (req, res) => {
       $push: { messages: newMessage._id },
     });
 
+    await Member.findOneAndUpdate({ userId }, { lastActive: new Date() });
+    
     res.status(201).json(newMessage);
   } catch (error) {
     console.error('Error sending message:', error);
