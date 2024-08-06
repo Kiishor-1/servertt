@@ -15,7 +15,7 @@ const adminMiddleware = (req, res, next)=>{
 // Define routes
 router.get('/', adminMiddleware, userController.getAllUsers);
 router.get('/:id', userController.getUserById);
-router.put('/:id', adminMiddleware, userController.updateUser);
+router.put('/:id', userController.updateUser);
 router.delete('/:id', adminMiddleware, userController.deleteUser);
 
 module.exports = router;
